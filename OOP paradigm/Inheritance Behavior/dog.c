@@ -2,14 +2,8 @@
 #include "dog.h"
 #include <stdio.h>
 
-//Clase hija
-typedef struct
-{
-    animal_t animal;
-    char *bark_type;
-}dog_t;
-
 dog_t dog;
+
 
 void bark(){
     printf("The dog is barking");
