@@ -11,6 +11,8 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 #include <stdint.h>
 
+typedef struct sensor sensor_t;
+
 typedef union{
     struct{
         uint8_t address;
