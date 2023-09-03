@@ -11,6 +11,7 @@ temp_sensor_t* new_temp_sensor(temp_sensor_t *p_sensor){
     //Method mapping
     p_sensor->sensor.init = init_temp_sensor;
     p_sensor->sensor.set_name = set_name_temp_sensor;
+    p_sensor->sensor.get_name = get_temp_sensor_name;
     return p_sensor;
 }
 
