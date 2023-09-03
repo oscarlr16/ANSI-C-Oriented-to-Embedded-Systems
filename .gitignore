@@ -6,14 +6,10 @@ OOP paradigm/First approach/main.exe
 .vscode/extensions.json
 OOP paradigm/Inheritance Behavior/main.exe
 OOP paradigm/Polymorphic Behavior/main.exe
-OOP paradigm/LAB-POO-Sensors.X/.generated_files
-OOP paradigm/LAB-POO-Sensors.X/build
-OOP paradigm/LAB-POO-Sensors.X/nbproject
-OOP paradigm/LAB-POO-Sensors.X/dist
-OOP paradigm/LAB-POO-Sensors.X/build/default/production/main.o.d
-OOP paradigm/LAB-POO-Sensors.X/dist/default/production/LAB-POO-Sensors.X.production.elf
-OOP paradigm/LAB-POO-Sensors.X/dist/default/production/LAB-POO-Sensors.X.production.hex
+OOP paradigm/LAB-POO-Sensors.X/.generated_files/
+OOP paradigm/LAB-POO-Sensors.X/build/
+OOP paradigm/LAB-POO-Sensors.X/debug/
+OOP paradigm/LAB-POO-Sensors.X/dist/
+OOP paradigm/LAB-POO-Sensors.X/nbproject/
+OOP paradigm/LAB-POO-Sensors.X/report/
 .vscode/settings.json
-OOP paradigm/LAB-POO-Sensors.X/dist/default/production/memoryfile.xml
-OOP paradigm/LAB-POO-Sensors.X/dist/default/production/LAB-POO-Sensors.X.production.map
-OOP paradigm/LAB-POO-Sensors.X/build/default/production/main.o

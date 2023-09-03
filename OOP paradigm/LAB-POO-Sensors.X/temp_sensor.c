@@ -24,7 +24,8 @@ temp_sensor_t* new_temp_sensor(temp_sensor_t *p_sensor){
 static void init_temp_sensor(void* p_sensor, uint8_t *name,uint8_t id){
     //Inicializa el setup necesario para el sensor de temperatura
     set_name_temp_sensor(p_sensor,name);
-    printf("Inicializando el sensor de temperatura %s con ID: \n",get_temp_sensor_name(p_sensor));
+    set_id_temp_sensor(p_sensor,id);
+    printf("Inicializando el sensor de temperatura %s con ID: %d\n",get_temp_sensor_name(p_sensor),get_id_temp_sensor(p_sensor));
 }
 
 static void set_name_temp_sensor(void *p_sensor, uint8_t *name){

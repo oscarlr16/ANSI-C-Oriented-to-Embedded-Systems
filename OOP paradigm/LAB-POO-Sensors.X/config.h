@@ -1,0 +1,8 @@
+#ifndef CONFIG_H
+#define	CONFIG_H
+// SENSORS IDS
+#define EMC1001_SENSOR_ID 5
+#define DS1624_SENSOR_ID 6
+#define MCP9808_SENSOR_ID 7
+
+#endif	/* CONFIG_H */
