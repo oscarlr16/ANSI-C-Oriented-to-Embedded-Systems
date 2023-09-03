@@ -57,17 +57,16 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c temp_sensor.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/temp_sensor.o
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/temp_sensor.o
 
 # Source Files
-SOURCEFILES=main.c
+SOURCEFILES=main.c temp_sensor.c
 
 
 
@@ -109,6 +108,24 @@ ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/4ec4e4d73f9f0a442712
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
+# ------------------------------------------------------------------------------------
+# Rules for buildStep: compile
+ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/temp_sensor.o: temp_sensor.c  .generated_files/flags/default/85fb1c527f699da729eb8bf5d4af18ffe1e3176 .generated_files/flags/default/3a60306d929cd76682dbf87396049a279970adbd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/temp_sensor.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  temp_sensor.c  -o ${OBJECTDIR}/temp_sensor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/temp_sensor.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_SIMULATOR=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+else
+${OBJECTDIR}/temp_sensor.o: temp_sensor.c  .generated_files/flags/default/4ec4e4d73f9f0a4427120b8f60498dbe18da37a9 .generated_files/flags/default/3a60306d929cd76682dbf87396049a279970adbd
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/temp_sensor.o.d 
+	@${RM} ${OBJECTDIR}/temp_sensor.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  temp_sensor.c  -o ${OBJECTDIR}/temp_sensor.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/temp_sensor.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+endif
+
 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
