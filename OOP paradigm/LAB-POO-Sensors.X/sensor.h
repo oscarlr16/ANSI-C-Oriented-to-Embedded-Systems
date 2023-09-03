@@ -41,4 +41,3 @@ struct sensor{
     uint8_t* (*get_id)(void* p_void_sensor);
 };
 #endif	/* SENSOR_H */
-
