@@ -12,5 +12,7 @@ struct temperature_sensor{
     
 };
 
+//Public prototype function
+temp_sensor_t* new_temp_sensor(temp_sensor_t *p_sensor);
 #endif	/* TEMP_SENSOR_H */
 
