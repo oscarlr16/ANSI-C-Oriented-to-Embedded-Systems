@@ -4,6 +4,7 @@
 #include "sensor.h"
 
 typedef struct temperature_sensor temp_sensor_t;
+typedef const struct temperature_sensor temp_sensor_const_t; //Data hiding
 
 struct temperature_sensor{
     sensor_t sensor;

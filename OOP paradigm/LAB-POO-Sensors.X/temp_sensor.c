@@ -7,6 +7,7 @@ static void set_name_temp_sensor(void *p_sensor, uint8_t *name);
 static uint8_t* get_temp_sensor_name(void* p_sensor);
 static void set_id_temp_sensor(void *p_sensor, uint8_t id);
 static uint8_t get_id_temp_sensor(void *p_sensor);
+static uint8_t read_temp_sensor(void *p_sensor, uint8_t id);
 
 //Funcion costructora
 temp_sensor_t* new_temp_sensor(temp_sensor_t *p_sensor){
@@ -16,6 +17,7 @@ temp_sensor_t* new_temp_sensor(temp_sensor_t *p_sensor){
     p_sensor->sensor.get_name = get_temp_sensor_name;
     p_sensor->sensor.set_id = set_id_temp_sensor;
     p_sensor->sensor.get_id = get_id_temp_sensor;
+    p_sensor->sensor.read = read_temp_sensor;
     return p_sensor;
 }
 
@@ -60,4 +62,27 @@ static uint8_t get_id_temp_sensor(void *p_sensor){
     temp_sensor_t *p_temp_sensor;
     p_temp_sensor = (temp_sensor_t*)p_sensor;
     return p_temp_sensor->sensor.id;
+}
+
+static uint8_t read_temp_sensor(void *p_sensor, uint8_t id){
+    temp_sensor_t *p_temp_sensor;
+    p_temp_sensor = (temp_sensor_t*)p_sensor;
+    switch(p_temp_sensor->sensor.id){
+        case EMC1001_SENSOR_ID:
+            printf("Accessing the EMC1001 sensor drivers...\n");
+            //Measuring temperature from EMC1001
+            p_temp_sensor->sensor.value = 30;//hal_read_temp_sensor();
+            break;
+        case DS1624_SENSOR_ID:
+            printf("Accessing the DS1624 sensor drivers...\n");
+            //Measuring temperature from DS1624
+            p_temp_sensor->sensor.value = 20;//hal_read_temp_sensor();
+            break;
+        case MCP9808_SENSOR_ID:
+            printf("Accessing the MCP9808 sensor drivers...\n");
+            //Measuring temperature from MCP9808
+            p_temp_sensor->sensor.value = 10;//hal_read_temp_sensor();
+            break;
+    }
+    return p_temp_sensor->sensor.value;
 }
