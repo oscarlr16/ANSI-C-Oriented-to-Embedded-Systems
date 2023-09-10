@@ -5,4 +5,7 @@
 #define DS1624_SENSOR_ID 6
 #define MCP9808_SENSOR_ID 7
 
+#define BMP085_SENSOR_ID 10
+#define DPS368_SENSOR_ID 11
+
 #endif	/* CONFIG_H */
