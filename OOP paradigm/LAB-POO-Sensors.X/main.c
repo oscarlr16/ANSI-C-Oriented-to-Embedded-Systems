@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include "temp_sensor.h"
+#include "barometric_pressure_sensor.h"
 
 int main(void) {
-    
+    /******************************************
+     * Temperature Sensors objects
+    *******************************************/
     // Declare a variable of type temp_sensor_t to represent the EMC1001 temperature sensor
     temp_sensor_const_t temp_sensor_emc1001;
     temp_sensor_const_t temp_sensor_ds1624;
@@ -27,5 +30,17 @@ int main(void) {
 
     //  p_temp_sensor_emc1001->sensor.id = 100; You cannot do this because the 'id' field is private
     p_temp_sensor_emc1001->sensor.set_id( p_temp_sensor_emc1001,100);
+
+    /*****************************************
+     * Pressure Sensors objects
+    *****************************************/
+   barometric_pressure_sensor_public barometric_pressure_sensor_bmp085;
+   barometric_pressure_sensor_public *p_barometric_pressure_sensor_bmp085 = new_barometric_pressure_sensor(&barometric_pressure_sensor_bmp085);
+
+   p_barometric_pressure_sensor_bmp085->sensor.init(p_barometric_pressure_sensor_bmp085, "BMP085", BMP085_SENSOR_ID);
+
+   printf("Sensor %s | Pressure: %u\n",p_barometric_pressure_sensor_bmp085->sensor.get_name(p_barometric_pressure_sensor_bmp085),p_barometric_pressure_sensor_bmp085->sensor.read(p_barometric_pressure_sensor_bmp085,BMP085_SENSOR_ID));
+
+
     return 0;
 }
