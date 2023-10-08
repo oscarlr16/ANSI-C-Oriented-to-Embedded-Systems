@@ -47,7 +47,24 @@
 #pragma config SOSCHP = ON    //SOSC High Power Enable bit (valid only when SOSCSEL = 1->Enable SOSC high power mode (default)
 #pragma config ALTI2C1 = ALTI2CEN    //Alternate I2C pin Location->SDA1 and SCL1 on RB9 and RB8
 
+#include "system.h"
 
-int main(void) {
-    return 0;
+void system_initialize(SYSTEM_STATE state){
+    switch (state)
+    {
+        case system_state_polling:
+            led_enable(LED_RED);
+            led_enable(LED_YELLOW);
+            led_enable(LED_GREEN);
+            led_enable(LED_BLUE);
+
+            //Initialize the LEDs to off
+            led_off(LED_RED);
+            led_off(LED_YELLOW);
+            led_off(LED_GREEN);
+            led_off(LED_BLUE);
+            break;
+        case system_state_interrupt:
+            break;
+    }
 }
